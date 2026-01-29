@@ -1,0 +1,21 @@
+# Python虚拟环境
+venv/
+__pycache__/
+*.pyc
+# Go编译文件
+*.exe
+*.dll
+*.tmp
+# 前端依赖/打包文件
+web-front/node_modules/
+web-front/dist/
+# Docker
+docker-compose.override.yml
+# 日志/临时文件
+*.log
+temp/
+# 系统文件
+*.DS_Store
+Thumbs.db
+# 配置文件（敏感信息，如密码）
+*.env
