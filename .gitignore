@@ -19,3 +19,20 @@ temp/
 Thumbs.db
 # 配置文件（敏感信息，如密码）
 *.env
+# ========== 根目录/通用忽略 ==========
+# IDE配置（PyCharm）
+.idea/
+*.iml
+# 系统文件
+.DS_Store
+Thumbs.db
+# ========== python-ai子项目忽略 ==========
+python-ai/venv/
+python-ai/__pycache__/
+python-ai/*.log
+# ========== web-front子项目忽略 ==========
+web-front/.vscode/
+web-front/node_modules/  # 前端依赖目录（如果后续安装了，也要忽略）
+web-front/package-lock.json
+web-front/.npm/
+web-front/dist/  # 前端打包产物
