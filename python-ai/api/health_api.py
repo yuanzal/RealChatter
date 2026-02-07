@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """健康检查接口：供Go后端检测AI服务是否可用，无业务逻辑"""
-from fastapi import APIRouter, Response
+from fastapi import APIRouter, Response, HTTPException
 from starlette.status import HTTP_200_OK, HTTP_503_SERVICE_UNAVAILABLE
 
 from utils import logger

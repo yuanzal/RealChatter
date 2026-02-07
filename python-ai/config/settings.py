@@ -4,7 +4,7 @@ from pydantic_settings import BaseSettings
 from dotenv import load_dotenv
 import os
 
-# 加载.env环境变量
+# 加载.env环境变量（上级目录的.env文件，路径保持不变）
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env"))
 
 class Settings(BaseSettings):
@@ -12,6 +12,10 @@ class Settings(BaseSettings):
     API_HOST: str = "0.0.0.0"
     API_PORT: int = 8001
     API_RELOAD: bool = True  # 开发模式自动重载
+
+    # ===== 新增：API鉴权配置（核心修改）=====
+    API_AUTH_KEY: str = "real_chatter_auth_key_20041226"  # 开发环境默认值（兜底用）
+    # 说明：Pydantic会自动优先读取.env中的API_AUTH_KEY，不存在时使用此默认值
 
     # 聊天记录解析配置
     PARSE_SUPPORT_FORMATS: list = ["txt", "xml"]  # 支持的解析格式

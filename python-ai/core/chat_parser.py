@@ -261,8 +261,7 @@ class WeChatChatParser:
             xml_content = xml_content.strip().encode("utf-8").decode("utf-8", errors="ignore")
             root = ET.fromstring(xml_content)
             # 兼容微信XML节点：msg/Message/ChatRecord/record
-            msg_nodes = root.findall(".//msg") or root.findall(".//Message") or \
-                        root.findall(".//ChatRecord") or root.findall(".//record")
+            msg_nodes = root.findall(".//msg") or root.findall(".//Message") or root.findall(".//ChatRecord") or root.findall(".//record")
 
             for idx, node in enumerate(msg_nodes):
                 try:

@@ -1,0 +1,55 @@
+# 模型文件（核心：忽略整个models目录）
+/models/
+
+# Python虚拟环境（必加）
+/venv/
+/env/
+/.venv/
+
+# Python 虚拟环境（必排除，体积大且环境相关）
+venv/
+env/
+*.env
+.venv/
+
+# 模型权重文件（重中之重！千问模型文件体积大，且GitHub有大小限制）
+models/
+*.bin
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+
+# 敏感配置文件（含密钥/路径等）
+config/local_config.py
+config/secrets.py
+*.ini
+*.conf
+.DS_Store  # 苹果系统文件
+*.log      # 日志文件（可能含路径/报错信息）
+
+# Python 编译文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+
+# CUDA/缓存文件
+.cache/
+torch_cache/
+transformers_cache/
+
+# 日志文件
+*.log
+/logs/
+
+# IDE配置（可选，根据你的编辑器加）
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db

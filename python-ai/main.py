@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from config import settings
-from api import chat_router, health_router
+from api import chat_router, health_router, ai_router
 from utils import logger
 
 # 初始化FastAPI应用
@@ -14,7 +14,7 @@ app = FastAPI(
     description="RealChatter项目AI服务：聊天记录解析、AI风格模仿",
     version="1.0.0",
     docs_url="/docs",  # Swagger文档地址
-    redoc_url="/redoc" # ReDoc文档地址
+    redoc_url="/redoc"  # ReDoc文档地址
 )
 
 # 跨域配置（允许Go服务层跨域调用）
@@ -29,6 +29,7 @@ app.add_middleware(
 # 注册路由
 app.include_router(chat_router)
 app.include_router(health_router)
+app.include_router(ai_router)
 
 # 根路径测试
 @app.get("/", summary="根路径测试")
