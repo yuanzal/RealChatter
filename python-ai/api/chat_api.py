@@ -33,7 +33,7 @@ async def parse_chat_record(req: ChatParseRequest):
     logger.info(f"收到聊天记录解析请求，格式类型：{req.format_type}，是否使用缓存：{req.use_cache}")
     # 调用core层解析逻辑（同步调用，解析为CPU密集型，无需async）
     result = wechat_chat_parser.parse(
-        content=req.content,
+        content=req.content.replace("\\n", "\n"),
         format_type=req.format_type,
         use_cache=req.use_cache
     )
